@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 450px;
+            height: 90vh;
+            max-height: 700px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .chat-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 0 0 20px 20px;
+        }
+
+        .chat-header h2 {
+            margin-bottom: 8px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        .chat-header p {
+            opacity: 0.95;
+            font-size: 0.95em;
+        }
+
+        .connection-status {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+
+        .status-online {
+            color: #4CAF50;
+        }
+
+        .status-offline {
+            color: #f44336;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(15px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .message.bot {
+            text-align: left;
+        }
+
+        .message.user {
+            text-align: right;
+        }
+
+        .message-bubble {
+            display: inline-block;
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 20px;
+            word-wrap: break-word;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .message.bot .message-bubble {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1565c0;
+            border-bottom-left-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .action-buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+
+        .page-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4) !important;
+        }
+
+        .page-btn:hover {
+            box-shadow: 0 4px 16px rgba(76, 175, 80, 0.5) !important;
+        }
+
+        .page-btn.urgent {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%) !important;
+            animation: urgentPulse 1.5s infinite;
+            box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4) !important;
+        }
+
+        @keyframes urgentPulse {
+            0% { box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4); }
+            50% { box-shadow: 0 4px 16px rgba(244, 67, 54, 0.6); transform: scale(1.02); }
+            100% { box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4); }
+        }
+
+        .resource-btn {
+            background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+            color: white;
+            font-size: 0.85em;
+            padding: 8px 12px;
+        }
+
+        .resource-btn:hover {
+            box-shadow: 0 4px 12px rgba(156, 39, 176, 0.4);
+        }
+
+        .typing-indicator {
+            display: none;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .typing-bubble {
+            background: #e0e0e0;
+            color: #666;
+            padding: 12px 18px;
+            border-radius: 20px;
+            border-bottom-left-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            font-style: italic;
+        }
+
+        .typing-dots {
+            display: inline-flex;
+            margin-left: 8px;
+        }
+
+        .typing-dots span {
+            height: 6px;
+            width: 6px;
+            background: #666;
+            border-radius: 50%;
+            margin: 0 1px;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            max-height: 100px;
+            resize: none;
+        }
+
+        .message-input:focus {
+            border-color: #4CAF50;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+            margin-left: 12px;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+        }
+
+        .send-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .crisis-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .crisis-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            margin: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(-20px) scale(0.9); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .crisis-content h3 {
+            color: #f44336;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .hotlines {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            border-left: 4px solid #f44336;
+        }
+
+        .success-message {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            border-left: 4px solid #4caf50;
+        }
+
+        .quick-suggestions {
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .quick-suggestions h4 {
+            color: #333;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .suggestion-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .suggestion-btn {
+            background: rgba(33, 150, 243, 0.1);
+            color: #1976D2;
+            border: 1px solid rgba(33, 150, 243, 0.2);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .suggestion-btn:hover {
+            background: rgba(33, 150, 243, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .chat-container {
+                width: 100%;
+                height: 95vh;
+                border-radius: 15px;
+            }
+            
+            .chat-header {
+                padding: 20px 15px;
+            }
+            
+            .chat-messages {
+                padding: 15px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 280px;
+                margin: 3px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🧘‍♀️ Talk With Roob</h2>
+            <p>Navigate your wellness journey with personalized support</p>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-online">● Online</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- Quick Suggestions -->
+            <div class="quick-suggestions" id="quickSuggestions">
+                <h4>🌟 Quick Navigation</h4>
+                <div class="suggestion-btns">
+                    <button class="suggestion-btn" onclick="sendQuickMessage('Find support')">🏥 Find Support</button>
+                    <button class="suggestion-btn" onclick="sendQuickMessage('Mood tracker')">📊 Mood Tracker</button>
+                    <button class="suggestion-btn" onclick="sendQuickMessage('Relaxation')">🧘‍♀️ Relaxation</button>
+                    <button class="suggestion-btn" onclick="sendQuickMessage('Articles')">📚 Articles</button>
+                    <button class="suggestion-btn" onclick="sendQuickMessage('Show menu')">📋 All Options</button>
+                </div>
+            </div>
+            
+            <!-- Welcome Message -->
+            <div class="message bot">
+                <div class="message-bubble">
+                    Welcome! 😊 I'm your Mental Wellness Assistant. I can help you navigate our comprehensive wellness platform with all these amazing features:
+                    <br><br>
+                    🏥 <strong>Find Support</strong> - Professional counseling<br>
+                    📊 <strong>Mood Tracker</strong> - Daily mood monitoring<br>
+                    🧘‍♀️ <strong>Relaxation</strong> - Meditation & breathing<br>
+                    📖 <strong>Stories</strong> - Recovery experiences<br>
+                    📚 <strong>Articles</strong> - Educational content<br>
+                    🧘‍♂️ <strong>Yoga</strong> - Mind-body practices<br>
+                    🎙️ <strong>Podcast</strong> - Wellness audio content<br>
+                    <br>
+                    How can I help you today? You can click the quick buttons above or just tell me what you need!
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-bubble">
+                Assistant is typing
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" class="message-input" id="messageInput" placeholder="Type your message or ask for help..." maxlength="500">
+            <button class="send-btn" id="sendBtn">➤</button>
+        </div>
+    </div>
+
+    <!-- Crisis Support Modal -->
+    <div class="crisis-modal" id="crisisModal">
+        <div class="crisis-content">
+            <h3>🚨 Crisis Support</h3>
+            <p>If you're having thoughts of self-harm or are in crisis, please reach out for immediate help:</p>
+            <div class="hotlines">
+                <strong>🔴 Crisis Hotline: 1333</strong> (24/7 Free)<br>
+                <strong>🔴 Emergency: 119</strong><br>
+                <strong>🔴 Samaritans: 0717 639 639</strong>
+            </div>
+            <p>Your life matters and help is available. You don't have to go through this alone.</p>
+            <br>
+            <button class="action-btn urgent" onclick="closeCrisisModal()">I understand - Get me help</button>
+        </div>
+    </div>
+
+    <script>
+        class MentalWellnessChatbot {
+            constructor() {
+                this.sessionId = this.generateSessionId();
+                this.messagesContainer = document.getElementById('chatMessages');
+                this.messageInput = document.getElementById('messageInput');
+                this.sendBtn = document.getElementById('sendBtn');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.connectionStatus = document.getElementById('connectionStatus');
+                this.quickSuggestions = document.getElementById('quickSuggestions');
+                
+                // Your chatbot.php file path - UPDATE THIS TO YOUR ACTUAL PATH!
+                this.apiUrl = 'chatbot.php';
+                
+                this.initializeEventListeners();
+                this.checkConnection();
+                
+                // Hide quick suggestions after first message
+                this.suggestionsHidden = false;
+            }
+            
+            generateSessionId() {
+                return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+            
+            initializeEventListeners() {
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                this.messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+                
+                // Auto-resize input
+                this.messageInput.addEventListener('input', () => {
+                    this.messageInput.style.height = 'auto';
+                    this.messageInput.style.height = Math.min(this.messageInput.scrollHeight, 100) + 'px';
+                });
+            }
+            
+            async checkConnection() {
+                try {
+                    const response = await fetch(this.apiUrl, {
+                        method: 'GET'
+                    });
+                    
+                    if (response.ok) {
+                        this.updateConnectionStatus(true);
+                    } else {
+                        this.updateConnectionStatus(false);
+                    }
+                } catch (error) {
+                    console.error('Connection test failed:', error);
+                    this.updateConnectionStatus(false);
+                }
+            }
+            
+            updateConnectionStatus(isOnline) {
+                if (isOnline) {
+                    this.connectionStatus.innerHTML = '<span class="status-online">● Online</span>';
+                } else {
+                    this.connectionStatus.innerHTML = '<span class="status-offline">● Offline</span>';
+                    this.showError('Connection failed. Please check if chatbot.php exists and is accessible.');
+                }
+            }
+            
+            showError(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.innerHTML = `⚠️ ${message}`;
+                this.messagesContainer.appendChild(errorDiv);
+                this.scrollToBottom();
+            }
+            
+            showSuccess(message) {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `✅ ${message}`;
+                this.messagesContainer.appendChild(successDiv);
+                this.scrollToBottom();
+            }
+            
+            hideSuggestions() {
+                if (!this.suggestionsHidden) {
+                    this.quickSuggestions.style.display = 'none';
+                    this.suggestionsHidden = true;
+                }
+            }
+            
+            async sendMessage(quickMessage = null) {
+                const message = quickMessage || this.messageInput.value.trim();
+                if (!message) return;
+                
+                // Hide quick suggestions after first message
+                this.hideSuggestions();
+                
+                // Disable send button
+                this.sendBtn.disabled = true;
+                
+                // Display user message
+                this.displayMessage(message, 'user');
+                this.messageInput.value = '';
+                this.messageInput.style.height = 'auto';
+                
+                // Show typing indicator
+                this.showTypingIndicator();
+                
+                try {
+                    // Send to chatbot API
+                    const response = await fetch(this.apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            session_id: this.sessionId
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Hide typing indicator
+                    this.hideTypingIndicator();
+                    
+                    if (data.error) {
+                        this.showError(data.message || 'An error occurred');
+                        return;
+                    }
+                    
+                    // Display bot response
+                    this.displayMessage(data.message || 'Sorry, I didn\'t get a response.', 'bot');
+                    
+                    // Handle special actions
+                    this.handleBotAction(data);
+                    
+                    // Update connection status
+                    this.updateConnectionStatus(true);
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    this.hideTypingIndicator();
+                    this.updateConnectionStatus(false);
+                    
+                    // Show appropriate error message
+                    if (error.message.includes('404')) {
+                        this.showError('Chatbot backend not found. Please check if chatbot.php exists in the correct location.');
+                    } else if (error.message.includes('500')) {
+                        this.showError('Server error. Please check your PHP code for syntax errors.');
+                    } else {
+                        this.showError('Connection failed. Please check your server configuration and try again.');
+                    }
+                } finally {
+                    // Re-enable send button
+                    this.sendBtn.disabled = false;
+                }
+            }
+            
+            displayMessage(message, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'message-bubble';
+                bubbleDiv.innerHTML = this.formatMessage(message);
+                
+                messageDiv.appendChild(bubbleDiv);
+                this.messagesContainer.appendChild(messageDiv);
+                
+                this.scrollToBottom();
+            }
+            
+            formatMessage(message) {
+                return message
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>');
+            }
+            
+            handleBotAction(data) {
+                // Handle crisis situations
+                if (data.urgent || data.action === 'crisis_alert') {
+                    setTimeout(() => this.showCrisisModal(), 1000);
+                }
+                
+                // Show page navigation button
+                if (data.show_page_button && data.page_url) {
+                    this.showPageButton(data);
+                }
+                
+                // Show resource buttons
+                if (data.resources && Array.isArray(data.resources)) {
+                    this.showResourceButtons(data.resources);
+                }
+                
+                // Show all pages (for menu)
+                if (data.show_all_pages) {
+                    this.showAllPagesButtons();
+                }
+            }
+            
+            showPageButton(data) {
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'action-buttons';
+                
+                const pageBtn = document.createElement('button');
+                pageBtn.className = data.urgent ? 'action-btn page-btn urgent' : 'action-btn page-btn';
+                pageBtn.innerHTML = data.page_text || 'Open Page';
+                pageBtn.onclick = () => this.navigateToPage(data.page_url, data.page_text);
+                
+                buttonDiv.appendChild(pageBtn);
+                this.messagesContainer.appendChild(buttonDiv);
+                this.scrollToBottom();
+            }
+            
+            showResourceButtons(resources) {
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'action-buttons';
+                
+                resources.forEach(resource => {
+                    const resourceBtn = document.createElement('button');
+                    resourceBtn.className = 'action-btn resource-btn';
+                    resourceBtn.textContent = this.getResourceLabel(resource);
+                    resourceBtn.onclick = () => this.handleResourceClick(resource);
+                    buttonDiv.appendChild(resourceBtn);
+                });
+                
+                this.messagesContainer.appendChild(buttonDiv);
+                this.scrollToBottom();
+            }
+            
+            showAllPagesButtons() {
+                const pages = [
+                    { name: 'Home', url: 'home.php', icon: '🏠' },
+                    { name: 'Mood Tracker', url: 'moodTracker.php', icon: '📊' },
+                    { name: 'Find Support', url: 'findSupport.php', icon: '🏥' },
+                    { name: 'Relaxation', url: 'relaxation.php', icon: '🧘‍♀️' },
+                    { name: 'Blog & Stories', url: 'blogstories.php', icon: '📖' },
+                    { name: 'Articles', url: 'articles.php', icon: '📚' },
+                    { name: 'Audio/Video', url: 'audio-video-therapy.php', icon: '🎥' },
+                    { name: 'Podcast', url: 'podcast.php', icon: '🎙️' },
+                    { name: 'Yoga', url: 'yoga.php', icon: '🧘‍♂️' },
+                    { name: 'Dream Analyzer', url: 'dream-analyzer.php', icon: '🌙' }
+                ];
+                
+                const buttonDiv = document.createElement('div');
+                buttonDiv.className = 'action-buttons';
+                
+                pages.forEach(page => {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = 'action-btn page-btn';
+                    pageBtn.innerHTML = `${page.icon} ${page.name}`;
+                    pageBtn.onclick = () => this.navigateToPage(page.url, page.name);
+                    buttonDiv.appendChild(pageBtn);
+                });
+                
+                this.messagesContainer.appendChild(buttonDiv);
+                this.scrollToBottom();
+            }
+            
+            navigateToPage(url, pageName) {
+                // Show confirmation message
+                this.displayMessage(`Opening ${pageName}... You'll be redirected in a new tab!`, 'bot');
+                
+                // Try to open in new tab
+                setTimeout(() => {
+                    const newWindow = window.open(url, '_blank');
+                    
+                    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                        // Popup blocked, show direct link
+                        this.displayMessage(
+                            `Popup blocked! Please click this link: <a href="${url}" target="_blank" style="color: #4CAF50; font-weight: bold; text-decoration: underline;">${pageName}</a>`, 
+                            'bot'
+                        );
+                    } else {
+                        this.showSuccess(`${pageName} opened successfully! Check the new tab.`);
+                    }
+                }, 1000);
+            }
+            
+            handleResourceClick(resource) {
+                // Send message to get resource info
+                this.sendMessage(resource);
+            }
+            
+            getResourceLabel(resource) {
+                const labels = {
+                    'find_support': '🏥 Professional Support',
+                    'mood_tracker': '📊 Mood Tracking',
+                    'relaxation': '🧘‍♀️ Relaxation',
+                    'articles': '📚 Articles',
+                    'blog_stories': '📖 Stories',
+                    'audio_video': '🎥 Audio/Video',
+                    'meditation': '🧘 Meditation',
+                    'breathing': '💨 Breathing Exercises',
+                    'yoga': '🧘‍♂️ Yoga',
+                    'podcast': '🎙️ Podcasts',
+                    'dream_analyzer': '🌙 Dream Analysis'
+                };
+                return labels[resource] || resource;
+            }
+            
+            showTypingIndicator() {
+                this.typingIndicator.style.display = 'block';
+                this.scrollToBottom();
+            }
+            
+            hideTypingIndicator() {
+                this.typingIndicator.style.display = 'none';
+            }
+            
+            scrollToBottom() {
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+            }
+            
+            showCrisisModal() {
+                document.getElementById('crisisModal').style.display = 'flex';
+            }
+        }
+        
+        // Global functions
+        function closeCrisisModal() {
+            document.getElementById('crisisModal').style.display = 'none';
+            // Automatically navigate to support page
+            setTimeout(() => {
+                window.open('findSupport.php', '_blank');
+            }, 500);
+        }
+        
+        function sendQuickMessage(message) {
+            if (window.chatbot) {
+                window.chatbot.sendMessage(message);
+            }
+        }
+        
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.chatbot = new MentalWellnessChatbot();
+        });
+
+        // Development testing function
+        window.testChat = function() {
+            console.log('Testing chat functionality...');
+            if (window.chatbot) {
+                window.chatbot.displayMessage('This is a test message from user', 'user');
+                setTimeout(() => {
+                    window.chatbot.displayMessage('This is a test bot response with navigation options', 'bot');
+                }, 1000);
+            }
+        };
+
+        // Quick navigation functions
+        window.quickNav = {
+            support: () => sendQuickMessage('Find support'),
+            mood: () => sendQuickMessage('Mood tracker'),
+            relax: () => sendQuickMessage('Relaxation'),
+            articles: () => sendQuickMessage('Articles'),
+            menu: () => sendQuickMessage('Show menu')
+        };
+    </script>
+</body>
+</html>

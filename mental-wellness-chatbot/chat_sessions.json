@@ -1,0 +1,474 @@
+{
+    "session_1757762263496_cvlaig1oc": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:17:43"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:17:43"
+            },
+            {
+                "type": "user",
+                "message": "i need help",
+                "timestamp": "2025-09-13 13:17:49"
+            },
+            {
+                "type": "bot",
+                "message": "It's a positive step that you're seeking professional support! \n\n\ud83d\udc65 **Our Professional Services:**\n\u2022 Licensed Mental Health Counselors\n\u2022 Anxiety & Panic Disorder Specialists\n\u2022 Depression Treatment Experts\n\u2022 Crisis Intervention Specialists\n\u2022 Family & Relationship Counselors\n\n\u2705 **What We Offer:**\n\u2022 Confidential sessions\n\u2022 Flexible scheduling\n\u2022 Experienced professionals\n\u2022 Affordable rates\n\u2022 Both English & Sinhala support",
+                "intent": "need_counselor",
+                "timestamp": "2025-09-13 13:17:49"
+            },
+            {
+                "type": "user",
+                "message": "ok",
+                "timestamp": "2025-09-13 13:18:04"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:18:04"
+            },
+            {
+                "type": "user",
+                "message": "i want booking",
+                "timestamp": "2025-09-13 13:18:24"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:18:24"
+            },
+            {
+                "type": "user",
+                "message": "ok",
+                "timestamp": "2025-09-13 13:18:39"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:18:39"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:17:43"
+    },
+    "session_1757762435252_ak2zrzr8o": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:20:35"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:20:35"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:20:35"
+    },
+    "session_1757762439266_6v56fknb1": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:20:39"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:20:39"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:20:39"
+    },
+    "session_1757762441410_8znvf82n6": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:20:41"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:20:41"
+            },
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 13:21:04"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to our Mental Wellness Assistant. I'm here to provide support, resources, and guidance for your mental health journey.\n\n\ud83c\udf1f **How I can help you:**\n\u2022 Provide emotional support and guidance\n\u2022 Share coping strategies and techniques\n\u2022 Connect you with professional counselors\n\u2022 Offer mental health resources\n\u2022 Help in both English and Sinhala\n\nHow are you feeling today? Is there anything specific you'd like to talk about?",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 13:21:04"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:20:41"
+    },
+    "session_1757762503744_1ckwpnorv": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:21:43"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:21:43"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:21:43"
+    },
+    "session_1757762507476_w12yauop1": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:21:47"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:21:47"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:21:47"
+    },
+    "session_1757762510858_5yetchhcz": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:21:50"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:21:50"
+            },
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 13:22:00"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to our Mental Wellness Assistant. I'm here to provide support, resources, and guidance for your mental health journey.\n\n\ud83c\udf1f **How I can help you:**\n\u2022 Provide emotional support and guidance\n\u2022 Share coping strategies and techniques\n\u2022 Connect you with professional counselors\n\u2022 Offer mental health resources\n\u2022 Help in both English and Sinhala\n\nHow are you feeling today? Is there anything specific you'd like to talk about?",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 13:22:00"
+            },
+            {
+                "type": "user",
+                "message": "suicide",
+                "timestamp": "2025-09-13 13:25:12"
+            },
+            {
+                "type": "bot",
+                "message": "\ud83d\udea8 I'm very concerned about you right now. Your safety is the most important thing.\n\n**IMMEDIATE HELP:**\n\ud83d\udd34 Crisis Hotline: **1333** (24\/7 Free)\n\ud83d\udd34 Emergency: **119**\n\ud83d\udd34 Samaritans: **0717 639 639**\n\nWould you like me to direct you to our professional support services?",
+                "intent": "crisis",
+                "timestamp": "2025-09-13 13:25:12"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:21:50"
+    },
+    "session_1757762860161_du3j0cmg2": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "connection_test",
+                "timestamp": "2025-09-13 13:27:40"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 13:27:40"
+            },
+            {
+                "type": "user",
+                "message": "suicide",
+                "timestamp": "2025-09-13 13:28:01"
+            },
+            {
+                "type": "bot",
+                "message": "\ud83d\udea8 I'm very concerned about you right now. Your safety is the most important thing.\n\n**IMMEDIATE HELP:**\n\ud83d\udd34 Crisis Hotline: **1333** (24\/7 Free)\n\ud83d\udd34 Emergency: **119**\n\ud83d\udd34 Samaritans: **0717 639 639**\n\nWould you like me to direct you to our professional support services?",
+                "intent": "crisis",
+                "timestamp": "2025-09-13 13:28:01"
+            },
+            {
+                "type": "user",
+                "message": "i need help",
+                "timestamp": "2025-09-13 13:28:13"
+            },
+            {
+                "type": "bot",
+                "message": "It's a positive step that you're seeking professional support! \n\n\ud83d\udc65 **Our Professional Services:**\n\u2022 Licensed Mental Health Counselors\n\u2022 Anxiety & Panic Disorder Specialists\n\u2022 Depression Treatment Experts\n\u2022 Crisis Intervention Specialists\n\u2022 Family & Relationship Counselors\n\n\u2705 **What We Offer:**\n\u2022 Confidential sessions\n\u2022 Flexible scheduling\n\u2022 Experienced professionals\n\u2022 Affordable rates\n\u2022 Both English & Sinhala support",
+                "intent": "need_counselor",
+                "timestamp": "2025-09-13 13:28:13"
+            },
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 13:28:29"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to our Mental Wellness Assistant. I'm here to provide support, resources, and guidance for your mental health journey.\n\n\ud83c\udf1f **How I can help you:**\n\u2022 Provide emotional support and guidance\n\u2022 Share coping strategies and techniques\n\u2022 Connect you with professional counselors\n\u2022 Offer mental health resources\n\u2022 Help in both English and Sinhala\n\nHow are you feeling today? Is there anything specific you'd like to talk about?",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 13:28:29"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:27:40"
+    },
+    "session_1757763879153_4cuzbf81h": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "Find support",
+                "timestamp": "2025-09-13 13:44:45"
+            },
+            {
+                "type": "bot",
+                "message": "\ud83c\udfe5 **Find Support** - Connect with Professional Help\n\n\ud83d\udc65 **Available Services:**\n\u2022 Licensed Mental Health Counselors\n\u2022 Anxiety & Panic Specialists\n\u2022 Depression Treatment Experts\n\u2022 Crisis Intervention\n\u2022 Family & Relationship Counseling\n\u2022 Group Therapy Sessions\n\n\u2705 **What We Offer:**\n\u2022 Confidential sessions\n\u2022 Flexible scheduling\n\u2022 Both English & Sinhala support\n\u2022 Online & in-person options",
+                "intent": "navigate_find_support",
+                "timestamp": "2025-09-13 13:44:45"
+            },
+            {
+                "type": "user",
+                "message": "HI",
+                "timestamp": "2025-09-13 13:47:40"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to your Mental Wellness Assistant!\n\n\ud83c\udf1f I'm here to help you navigate our comprehensive wellness platform. I can guide you to:\n\n\ud83c\udfe5 **Professional Support** - Find counselors and therapists\n\ud83d\udcca **Mood Tracking** - Monitor your daily emotional wellness\n\ud83e\uddd8\u200d\u2640\ufe0f **Relaxation Tools** - Meditation and breathing exercises\n\ud83d\udcda **Educational Resources** - Articles, stories, and podcasts\n\ud83e\uddd8\u200d\u2642\ufe0f **Wellness Activities** - Yoga, digital detox, dream analysis\n\n\ud83d\udcac **How are you feeling today? What can I help you find?**\n\nYou can say things like \"find support\", \"relaxation\", \"mood tracker\", or just tell me how you're feeling!",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 13:47:40"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:44:45",
+        "last_activity": "2025-09-13 13:47:40"
+    },
+    "session_1757764773331_9rciwzhpk": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 13:59:40"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to our Mental Wellness Assistant. I'm here to provide support, resources, and guidance for your mental health journey.\n\n\ud83c\udf1f **How I can help you:**\n\u2022 Provide emotional support and guidance\n\u2022 Share coping strategies and techniques\n\u2022 Connect you with professional counselors\n\u2022 Offer mental health resources\n\u2022 Help in both English and Sinhala\n\nHow are you feeling today? Is there anything specific you'd like to talk about?",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 13:59:40"
+            },
+            {
+                "type": "user",
+                "message": "meditation",
+                "timestamp": "2025-09-13 13:59:45"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 13:59:45"
+            },
+            {
+                "type": "user",
+                "message": "articles",
+                "timestamp": "2025-09-13 13:59:49"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 13:59:49"
+            },
+            {
+                "type": "user",
+                "message": "meditation",
+                "timestamp": "2025-09-13 13:59:58"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 13:59:58"
+            },
+            {
+                "type": "user",
+                "message": "articles",
+                "timestamp": "2025-09-13 14:00:01"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 14:00:01"
+            },
+            {
+                "type": "user",
+                "message": "suiside",
+                "timestamp": "2025-09-13 14:00:35"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 14:00:35"
+            },
+            {
+                "type": "user",
+                "message": "articles",
+                "timestamp": "2025-09-13 14:00:43"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 14:00:43"
+            },
+            {
+                "type": "user",
+                "message": "meditation",
+                "timestamp": "2025-09-13 14:00:47"
+            },
+            {
+                "type": "bot",
+                "message": "I'm glad you're looking for resources to support your mental wellness!\n\n\ud83e\uddd8\u200d\u2640\ufe0f **Self-Help Resources:**\n\u2022 Guided meditation sessions\n\u2022 Yoga routines for mental health\n\u2022 Breathing exercises for anxiety\n\u2022 Self-care tips and strategies\n\n\ud83d\udc65 **Professional Support:**\nFor personalized care and treatment, our professional counselors can provide:\n\u2022 Individual therapy sessions\n\u2022 Specialized treatment plans\n\u2022 Ongoing support and guidance\n\u2022 Crisis intervention when needed",
+                "intent": "resources",
+                "timestamp": "2025-09-13 14:00:47"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 13:59:40"
+    },
+    "session_1757764859015_1rurgs3t7": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "Find support",
+                "timestamp": "2025-09-13 14:01:02"
+            },
+            {
+                "type": "bot",
+                "message": "I'd be happy to help you find the right professional support! \n\n\ud83c\udfe5 **Our Support Services Page includes:**\n\u2022 Detailed counselor profiles and specializations\n\u2022 Service descriptions and treatment approaches\n\u2022 Appointment booking system\n\u2022 Contact information and availability\n\u2022 Insurance and payment options\n\n\u2728 **Why Choose Our Services:**\n\u2022 Licensed and experienced professionals\n\u2022 Culturally sensitive care\n\u2022 Flexible scheduling options\n\u2022 Confidential and safe environment\n\u2022 Both online and in-person sessions available",
+                "intent": "find_support",
+                "timestamp": "2025-09-13 14:01:02"
+            },
+            {
+                "type": "user",
+                "message": "yes",
+                "timestamp": "2025-09-13 14:01:12"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 14:01:12"
+            },
+            {
+                "type": "user",
+                "message": "bad",
+                "timestamp": "2025-09-13 14:01:26"
+            },
+            {
+                "type": "bot",
+                "message": "I understand you're reaching out, and I'm here to help. Sometimes it's hard to know where to start when we're dealing with difficult feelings.\n\n\ud83d\udc99 **I'm here to support you with:**\n\u2022 Anxiety and stress management\n\u2022 Depression and mood concerns\n\u2022 General mental wellness\n\u2022 Finding professional help\n\u2022 Coping strategies and resources\n\nCan you tell me a bit more about how you're feeling or what's on your mind today?",
+                "intent": "general",
+                "timestamp": "2025-09-13 14:01:26"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 14:01:02"
+    },
+    "session_1757764913422_1ju7pvvix": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 14:02:00"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to our Mental Wellness Assistant. I'm here to provide support, resources, and guidance for your mental health journey.\n\n\ud83c\udf1f **How I can help you:**\n\u2022 Provide emotional support and guidance\n\u2022 Share coping strategies and techniques\n\u2022 Connect you with professional counselors\n\u2022 Offer mental health resources\n\u2022 Help in both English and Sinhala\n\nHow are you feeling today? Is there anything specific you'd like to talk about?",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 14:02:00"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 14:02:00"
+    },
+    "session_1757764943443_c3soy0i8d": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "find support",
+                "timestamp": "2025-09-13 14:02:36"
+            },
+            {
+                "type": "bot",
+                "message": "\ud83c\udfe5 **Find Support** - Connect with Professional Help\n\n\ud83d\udc65 **Available Services:**\n\u2022 Licensed Mental Health Counselors\n\u2022 Anxiety & Panic Specialists\n\u2022 Depression Treatment Experts\n\u2022 Crisis Intervention\n\u2022 Family & Relationship Counseling\n\u2022 Group Therapy Sessions\n\n\u2705 **What We Offer:**\n\u2022 Confidential sessions\n\u2022 Flexible scheduling\n\u2022 Both English & Sinhala support\n\u2022 Online & in-person options",
+                "intent": "navigate_find_support",
+                "timestamp": "2025-09-13 14:02:36"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 14:02:36",
+        "last_activity": "2025-09-13 14:02:36"
+    },
+    "session_1757766951359_2fz77uu3s": {
+        "messages": [
+            {
+                "type": "user",
+                "message": "hi",
+                "timestamp": "2025-09-13 14:35:59"
+            },
+            {
+                "type": "bot",
+                "message": "Hello! \ud83d\ude0a Welcome to your Mental Wellness Assistant!\n\n\ud83c\udf1f I'm here to help you navigate our comprehensive wellness platform. I can guide you to:\n\n\ud83c\udfe5 **Professional Support** - Find counselors and therapists\n\ud83d\udcca **Mood Tracking** - Monitor your daily emotional wellness\n\ud83e\uddd8\u200d\u2640\ufe0f **Relaxation Tools** - Meditation and breathing exercises\n\ud83d\udcda **Educational Resources** - Articles, stories, and podcasts\n\ud83e\uddd8\u200d\u2642\ufe0f **Wellness Activities** - Yoga, digital detox, dream analysis\n\n\ud83d\udcac **How are you feeling today? What can I help you find?**\n\nYou can say things like \"find support\", \"relaxation\", \"mood tracker\", or just tell me how you're feeling!",
+                "intent": "greeting",
+                "timestamp": "2025-09-13 14:35:59"
+            },
+            {
+                "type": "user",
+                "message": "suicide",
+                "timestamp": "2025-09-13 14:36:03"
+            },
+            {
+                "type": "bot",
+                "message": "\ud83d\udea8 **CRISIS SUPPORT NEEDED**\n\nI'm very concerned about you. Your safety is the most important thing right now.\n\n**IMMEDIATE HELP:**\n\ud83d\udd34 **Crisis Hotline: 1333** (24\/7 Free)\n\ud83d\udd34 **Emergency: 119**\n\ud83d\udd34 **Samaritans: 0717 639 639**\n\nPlease reach out to professional support immediately. You don't have to go through this alone.",
+                "intent": "crisis",
+                "timestamp": "2025-09-13 14:36:03"
+            }
+        ],
+        "context": [],
+        "created_at": "2025-09-13 14:35:59",
+        "last_activity": "2025-09-13 14:36:03"
+    }
+}
