@@ -95,5 +95,5 @@ The Open Mind website provides a comprehensive platform for mental wellness, com
 
 ## Contact
 **Developer**: H.S.A. Liyanage  
-**Email**: hashiliyanage231@gmail.com  
+**Email**: hasanthikaliyanage03@gmail.com  
 **GitHub**: [https://github.com/hasanthikaliyanage](https://github.com/hasanthikaliyanage)
