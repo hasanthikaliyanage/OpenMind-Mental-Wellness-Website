@@ -2,7 +2,7 @@
 require 'vendor/autoload.php';
 
 $client = new MongoDB\Client(
-    "mongodb+srv://USERNAME:PASSWORD@openmindcluster.u3wdvre.mongodb.net/OMP?retryWrites=true&w=majority"
+    "mongodb+srv://hashiliyanage231_db_user:<db_password>@openmindcluster.u3wdvre.mongodb.net/?appName=OpenMindCluster"
 );
 
 $db = $client->OMP;
