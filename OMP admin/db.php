@@ -1,11 +1,12 @@
 <?php
-require 'vendor/autoload.php'; // MongoDB PHP driver autoload
+require 'vendor/autoload.php';
 
-try {
-    $client = new MongoDB\Client("mongodb://localhost:27017");
-    $db = $client->OMP; // database name
-    $admins = $db->admins;   // collection for admins
-} catch (Exception $e) {
-    die("Error connecting to MongoDB: " . $e->getMessage());
-}
+$client = new MongoDB\Client(
+    "mongodb+srv://USERNAME:PASSWORD@openmindcluster.u3wdvre.mongodb.net/OMP?retryWrites=true&w=majority"
+);
+
+$db = $client->OMP;
+
+$therapistsCollection = $db->therapists;
+$bookingsCollection = $db->bookings;
 ?>
