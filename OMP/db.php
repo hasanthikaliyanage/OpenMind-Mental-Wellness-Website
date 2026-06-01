@@ -1,18 +1,12 @@
 <?php
-require 'vendor/autoload.php'; // Composer autoload
+require 'vendor/autoload.php';
 
-use MongoDB\Client;
+$client = new MongoDB\Client(
+    "mongodb+srv://USERNAME:PASSWORD@openmindcluster.u3wdvre.mongodb.net/OMP?retryWrites=true&w=majority"
+);
 
-try {
-    // Local MongoDB default connection
-    $client = new Client("mongodb://localhost:27017");
+$db = $client->OMP;
 
-    // Select your database and collection
-    $collection = $client->OMP->users;
-
-    // Optional test connection
-    // echo "Connected to MongoDB successfully.";
-} catch (Exception $e) {
-    die("Error connecting to MongoDB: " . $e->getMessage());
-}
+$therapistsCollection = $db->therapists;
+$bookingsCollection = $db->bookings;
 ?>
